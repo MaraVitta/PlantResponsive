@@ -1,0 +1,151 @@
+:root {
+  --color-primary: #e4ece4;
+  --color-secondary: #c2d4dd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-primary);
+  color: rgb(15, 12, 12);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  border: rgb(132, 130, 130) solid 5px;
+  margin: 20px auto;
+  text-align: center;
+  /*GRID*/
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(7, auto);
+  grid-template-areas: "header header header header"
+    "section section section sidebar"
+    "card-1 card-2 card-3 sidebar"
+    "section-2 section-2 section-2 section-2"
+    "widget-1 widget-2 widget-3 widget-4"
+    "footer footer footer footer"
+}
+
+.container .header,
+.section .sidebar,
+.card-1 .card-2,
+.car-3 .section-2,
+.widget-1 .widget-2,
+.widget-3 .widget-4,
+.footer {
+  padding: 20px;
+}
+
+.container .header {
+  background-color: #c8c3cc;
+  grid-area: header;
+  /* FLEXBOX ↓ */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.container .section {
+  background-color: #563f46;
+  grid-area: section;
+}
+
+.container .sidebar {
+  background-color: #b0aac0;
+  grid-area: sidebar;
+  text-align: center;
+  /* FLEXBOX ↓ */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.container .card-1 {
+  background-color: #484f4f;
+  grid-area: card-1;
+}
+
+.container .card-2 {
+  background-color: #8ca3a3;
+  grid-area: card-2;
+}
+
+.container .card-3 {
+  background-color: #bbab9b;
+  grid-area: card-3;
+}
+
+img {
+  width: 50%;
+  padding: 20px;
+}
+
+.container .section-2 {
+  background-color: #8ca3a3;
+  grid-area: section-2;
+}
+.container .widget-1,
+.container .widget-2,
+.container .widget-3,
+.container .widget-4 {	
+	height: 100px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container .widget-1 {
+  background-color: #96897f;
+  grid-area: widget-1;
+}
+
+.container .widget-2 {
+  background-color: #9c7354;
+  grid-area: widget-2;
+}
+
+.container .widget-3 {
+  background-color: #fabe94;
+  grid-area: widget-3;
+}
+
+.container .widget-4 {
+  background-color: #555251;
+  grid-area: widget-4;
+}
+
+.container .footer {
+  background-color: #bbab9b;
+  grid-area: footer
+}
+
+.container .ul-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-color: rgb(13, 13, 13);
+  }
+  .container {
+    grid-template-areas: "header header header header"
+      "section section section section"
+      "sidebar sidebar sidebar sidebar"
+      "card-1 card-1 card-1 card-1"
+      "card-2 card-2 card-2 card-2"
+      "card-3 card-3 card-3 card-3"
+      "section-2 section-2 section-2 section-2"
+      "widget-1 widget-1 widget-2 widget-2"
+      "widget-3 widget-3 widget-4 widget-4"
+      "footer footer footer footer";
+  }
+}
